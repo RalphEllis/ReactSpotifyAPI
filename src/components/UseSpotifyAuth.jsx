@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 // 🔑 Config
 const CLIENT_ID = "7ef5244907074a13ad7cf5b118d89495";
-const REDIRECT_URI = "http://127.0.0.1:5173/";
+const REDIRECT_URI = "https://ralphellis.github.io/ReactSpotifyAPI/";
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
 
