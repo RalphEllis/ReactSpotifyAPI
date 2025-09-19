@@ -66,8 +66,18 @@ npm install
 ```
 setup .env file or modify useSpotifyAuth.jsx directly:
 REACT_APP_CLIENT_ID=your_spotify_client_id
-REACT_APP_REDIRECT_URI=http://localhost:5173/
+REACT_APP_REDIRECT_URI=http://127.0.0.1:5173/
 
 ```bash
 npm run dev
 ```
+
+### Notes on local hosting
+
+Spotify does not allow redirects to localhost; when hosting locally, use 127.0.0.1:5173
+
+```bash
+npm run dev -- --host 127.0.0.1
+```
+
+also make sure the spotify dev account for your PKCE has redirect permissions
