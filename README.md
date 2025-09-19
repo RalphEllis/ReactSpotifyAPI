@@ -1,12 +1,73 @@
-# React + Vite
+# React Spotify Playlist Editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based web application that allows you to manage your Spotify playlists. You can view your playlists, add or remove tracks, rename playlists, and search for songs to add—all with a Spotify-style interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Spotify Login:** Authenticate via Spotify OAuth with PKCE.
+- **Playlist Management:** 
+  - View all your playlists.
+  - Select a playlist to see its tracks.
+  - Rename playlists.
+  - Delete playlists.
+- **Track Management:** 
+  - Add tracks to playlists via search.
+  - Remove tracks from playlists.
+- **Responsive Design:** Works on both desktop and mobile devices.
+- **Spotify-themed UI:** Dark theme with green accents, similar to Spotify.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Screenshots
+
+![App Screenshot](./screenshot.png)
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18+ recommended)
+- Spotify Developer Account
+- Your own Spotify App with **Client ID** and **Redirect URI**
+
+### Folder Strcture
+
+ReactProj/
+├─ src/
+│  ├─ components/
+│  │  ├─ LoginComp.jsx
+│  │  ├─ PlayListComp.jsx
+│  │  ├─ TrackListComp.jsx
+│  │  ├─ SearchBarComp.jsx
+│  │  ├─ PlayPreviewComp.jsx
+│  │  └─ useSpotifyAuth.jsx
+│  ├─ App.jsx
+│  └─ main.css / component CSS files
+├─ public/
+│  └─ index.html
+├─ package.json
+├─ README.md
+└─ .gitignore
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/ReactSpotifyAPI.git
+
+cd ReactSpotifyAPI/ReactProj
+
+npm install
+```
+setup .env file or modify useSpotifyAuth.jsx directly:
+REACT_APP_CLIENT_ID=your_spotify_client_id
+REACT_APP_REDIRECT_URI=http://localhost:5173/
+
+```bash
+npm run dev
+```

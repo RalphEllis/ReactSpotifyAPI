@@ -1,0 +1,122 @@
+/* main container */
+
+.trackListContainer {
+	width: 90%;
+	margin: 5%;
+	height: 800px;
+
+	background-color: #1e1e1e;
+	border: 10px solid #444;
+	border-radius: 30px;
+
+    padding: 15px;
+    gap: 20px;
+
+    display: flex;
+    flex-direction: column; /* stack items vertically */
+
+    overflow-y: auto;        /* vertical scroll */
+    overflow-x: hidden;      /* hide horizontal scroll if any */
+}
+
+/* scrollbar smoothening stuff */
+
+/* scrollable inner wrapper */
+.scrollWrapper {
+  flex: 1;               /* fill available height */
+  overflow-y: auto;      /* vertical scroll */
+  overflow-x: hidden;    /* no horizontal scroll */
+  padding-right: 5px;    /* optional, prevent scrollbar from overlapping content */
+  border-radius: 20px;   /* optional: round inner scroll edges */
+}
+
+.trackListContainer::-webkit-scrollbar {
+  width: 16px;
+}
+
+.trackListContainer::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+/* track list items */
+
+.trackItem {
+  display: flex;
+  justify-content: space-between; /* text left, button right */
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #333; /* optional separator line */
+  margin-right: 20px;
+}
+
+.trackInfo {
+  flex: 1; /* take all available space left of the button */
+}
+
+/* prevents ul element from interfering with styling */
+.trackListContainer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* add button styling */
+
+.addButton {
+  background-color: black; /* Spotify bright green background */
+  color: white;
+  border: 5px solid #1db954; /* 5px bright green border */
+  border-radius: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.addButton:hover {
+  transform: scale(1.05);    /* subtle grow effect */
+  border: 5px solid #1db954; /* 5px bright green border */
+}
+
+h3 {
+	width: 80%;
+	margin: 0px auto;
+}
+
+/* h2 and h3, used as visual treshholds */
+.playListTitle {
+  padding: 15px 0px;
+  background-color: black;
+  border-radius: 20px;
+  border: 2px solid darkgreen;
+  color: #1db954;
+}
+
+/* Responsive layout: vertical stacking on small screens */
+@media (max-width: 600px) {
+  .trackItem,
+  .playlistItem {
+    flex-direction: column;      /* stack vertically */
+    align-items: center;         /* center content horizontally */
+    text-align: center;          /* center text */
+  }
+
+  .trackInfo,
+  .playlistInfo {
+    width: 100%;                 /* full width */
+    margin: 5px 0;               /* spacing between sections */
+  }
+
+  .addButton,
+  .deleteButton {
+    width: 80%;                  /* optional: buttons a bit smaller than full width */
+    margin-top: 5px;
+  }
+
+  .albumArt {                    /* if you have an album art image */
+    margin-bottom: 5px;
+    width: 100px;                /* adjust as needed */
+    height: 100px;
+  }
+}

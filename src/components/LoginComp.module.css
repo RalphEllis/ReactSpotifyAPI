@@ -1,0 +1,38 @@
+.loginContainer {
+  width: 90%;
+  margin: 5%;
+  height: 200px;
+
+  background-color: #1e1e1e;
+  border: 10px solid #444;
+  border-radius: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.loginButton,
+.logoutButton {
+  background-color: black;
+  color: white;
+  border: 5px solid #1db954; /* Spotify green */
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.loginButton:hover,
+.logoutButton:hover {
+  transform: scale(1.05);
+  border: 5px solid #1db954;
+}
+
+.loggedInText {
+  color: #1db954;
+  font-weight: bold;
+}
+

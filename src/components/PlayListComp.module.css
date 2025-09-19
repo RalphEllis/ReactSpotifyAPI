@@ -1,0 +1,164 @@
+/* main container */
+.playListContainer {
+	width: 90%;
+	margin: 5%;
+	height: 800px;
+
+	background-color: #1e1e1e;
+	border: 10px solid #444;
+	border-radius: 30px;
+
+	padding: 15px;
+	gap: 20px;
+
+	display: flex;
+	flex-direction: column; /* stack items vertically */
+
+	overflow-y: auto;        /* vertical scroll */
+	overflow-x: hidden;      /* hide horizontal scroll if any */
+}
+
+/* scrollbar */
+.playListContainer::-webkit-scrollbar {
+	width: 16px;
+}
+
+.playListContainer::-webkit-scrollbar-thumb {
+	background-color: #555;
+	border-radius: 4px;
+}
+
+/* list items */
+.playlistItem {
+	display: flex;
+	justify-content: space-between; /* text left, buttons right */
+	align-items: center;
+	padding: 10px;
+	border-bottom: 1px solid #333;
+	margin-right: 20px;
+}
+
+.playlistInfo {
+  flex: 1;                /* take remaining space */
+  min-width: 0;           /* important to allow text truncation/overflow */
+  max-width: calc(100% - 120px); /* leave room for the button, adjust 120px as needed */
+  background-color: #1e1e1e;
+  border-radius: 20px;
+
+  padding: 5px 10px;
+  overflow: hidden;       /* optional: truncate text */
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+}
+
+
+/* ul reset */
+.playListContainer ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* buttons */
+.createButton,
+.addButton,
+.renameButton,
+.deleteButton {
+	background-color: black;
+	color: grey;
+	border: 3px solid #1db954; /* bright Spotify green border */
+	border-radius: 10px;
+	padding: 5px 10px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background-color 0.2s, transform 0.2s, border 0.2s;
+}
+
+.createButton:hover,
+.addButton:hover,
+.renameButton:hover,
+.deleteButton:hover {
+	transform: scale(1.05);
+	border: 5px solid #1db954; /* ensure border remains green on hover */
+}
+
+.createButton:focus,
+.addButton:focus,
+.renameButton:focus,
+.deleteButton:focus {
+	outline: 2px solid #1db954;
+	outline-offset: 2px;
+}
+
+/* h2 and h3, used as visual treshholds */
+.playListTitle {
+	padding: 15px 0px;
+	background-color: black;
+	border-radius: 20px;
+	border: 2px solid darkgreen;
+	color: #1db954;
+}
+
+/* Spotify-style input fields */
+.spotifyInput {
+  background-color: black;
+  color: white;
+  border: 2px solid #1db954;      /* same bright green border as buttons */
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-weight: bold;
+  width: 250px;                   /* or adjust as needed */
+  transition: border 0.2s, transform 0.2s;
+  outline: none;                  /* remove default focus ring */
+}
+
+/* Focus & hover effects */
+.spotifyInput:focus,
+.spotifyInput:hover {
+  border: 2px solid #1db954;      /* keep green consistent */
+  transform: scale(1.02);          /* subtle grow effect */
+}
+
+p {
+	background-color: black;
+	border: 2px solid gray;
+	color: gray;
+	border-radius: 15px;
+	width: 50%;
+	margin: 0 auto;
+	padding: 5px 15px;
+}
+
+/* Responsive layout: vertical stacking on small screens */
+@media (max-width: 600px) {
+  .trackItem,
+  .playlistItem {
+    flex-direction: column;      /* stack vertically */
+    align-items: center;         /* center content horizontally */
+    text-align: center;          /* center text */
+  }
+
+  .trackInfo,
+  .playlistInfo {
+    width: 100%;                 /* full width */
+    margin: 5px 0;               /* spacing between sections */
+  }
+
+  .addButton,
+  .deleteButton {
+    width: 80%;                  /* optional: buttons a bit smaller than full width */
+    margin-top: 5px;
+  }
+
+  .albumArt {                    /* if you have an album art image */
+    margin-bottom: 5px;
+    width: 100px;                /* adjust as needed */
+    height: 100px;
+  }
+    .playlistInfo {
+    max-width: 100%;          /* allow full width */
+    overflow: visible;        /* remove clipping */
+    white-space: normal;      /* allow line wrapping */
+    text-overflow: clip;      /* remove ellipsis */
+  }
+}
